@@ -40,7 +40,7 @@ async function handleText(projectId: string, text: string, source: string) {
 // PDF
 async function handlePdf(projectId: string, file: File) {
   const buffer = Buffer.from(await file.arrayBuffer())
-  const pdfParse = (await import('pdf-parse')).default
+  const pdfParse = require('pdf-parse')
   const data = await pdfParse(buffer)
   return await ingestChunks(projectId, data.text, file.name)
 }
