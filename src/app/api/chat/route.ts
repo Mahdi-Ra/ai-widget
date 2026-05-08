@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { searchChunks } from '@/app/lib/rag'
-import { openai } from '@/app/lib/openai'
-import { adminClient } from '@/app/lib/supabase/admin'
+import { searchChunks } from '@/lib/rag'
+import { openai } from '@/lib/openai'
+import { adminClient } from '@/lib/supabase/admin'
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   const { projectId, message, conversationId, lang } = await req.json()

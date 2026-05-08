@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { adminClient } from '@/lib/supabase/admin'
 import { embedText, chunkText } from '@/lib/rag'
+export const dynamic = 'force-dynamic'
 
 export const maxDuration = 60
 

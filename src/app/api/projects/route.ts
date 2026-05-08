@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { adminClient } from '@/app/lib/supabase/admin'
+import { adminClient } from '@/lib/supabase/admin'
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   const { name, userId } = await req.json()
